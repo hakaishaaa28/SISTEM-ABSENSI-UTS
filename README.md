@@ -49,14 +49,10 @@ Perkembangan  dalam  bidang teknologi  diera  modern  saat  ini  sudah  semakin 
 - **STUDI KASUS 9: SISTEM ABSENSI MAHASISWA**
 #### **Class Mahasiswa**
 Atribut:
-
-nama (String), npm (String), absent (boolean)])
-
+- nama (String), npm (String), absent (boolean)])
 Method:
-
-Absensint pertemuan, boolean hadir)
-Mengisi kehadiran berdasarkan pertemuan
-hitungKehadiran()
+- Absensint pertemuan, boolean hadir)
+Mengisi kehadiran berdasarkan pertemuan hitungKehadiran()
 Menghitung jumlah pertemuan yang dihadiri get Persentase Kehadiran()
 Menghitung persentase kehadiran (%)
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
@@ -92,9 +88,9 @@ Menghitung persentase kehadiran (%)
 
 ##### **Class Kelas**
 Atribut:
-namakelas (String), List<Mahasiswa daftar Mahasiswa
+- namakelas (String), List<Mahasiswa daftar Mahasiswa
 Method:
-tambah Mahasiswa Mahasiswa m) Menambahkan mahasiswa ke dalam kelas.
+- tambah Mahasiswa Mahasiswa m) Menambahkan mahasiswa ke dalam kelas.
 tampilkan Rekap() Menampilkan daftar mahasiswa beserta kehadirannya dalam persentase.
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Class%20Kelas.png?raw=true)
 #### Source Code: 
@@ -188,6 +184,7 @@ Gunakan if-else untuk menentukan apakah mahasuwa lulus berdasarkan kehadiran 2 7
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Output.png?raw=true)
 
 ##### Penjelasan Output:
+Dari semua souce code dari ketiga file yang sudah dibuat mulai dari file class mahasiswa, class kelas, dan class MAIN maka akan didapatkan output seperti poda gambar 1.5 di atas, dimana awalnya akan di cetak nama kelas, jumlah pertemuan, dan jumlah mahasiswa yang semuanya diketik atau dimasukkan oleh pengguna saat menjalankan program, barulah memasukkan semua data mahasiswa yang jumlahnya akan ada 3 orang karena dari data awal yang dimasukkan jumalah mahasiswanya ada 3 orang. Setelah itu masukkan nama, NPM, dan kehadiran setiap mahasiswa dalam 5 kali pertemuan seperti yang sudah dicantumkan sebelumnya. Barulah di akhir akan muncul tabel yang berisi rekap absensi dari semua mahasiswa dari source code yang sebelumnnya dimasukkan.
 
 
 ## Kesimpulan
