@@ -16,12 +16,10 @@
 1. [Overview Sistem](#overview-sistem)
 2. [Landasan Teori](#Landasan-Teori)
 3. [Soal Dan Pembahasan](#Soal-Dan-Pembahasan)
-4. [Teknik Preprocessing Data](#teknik-preprocessing-data)
-5. [Strategi Evaluasi Model](#strategi-evaluasi-model)
-6. [Struktur Project](#struktur-project)
-7. [Instalasi dan Setup](#instalasi-dan-setup)
-8. [Penggunaan Sistem](#penggunaan-sistem)
-9. [Pengembangan Sistem Lanjutan](#pengembangan-sistem-lanjutan)
+4. [Kesimpulan](#Kesimpulan)
+5. [Daftar Pustaka](#Daftar-Pustaka)
+6. [Lampiran](#Lampiran)
+
 
 ---
 
@@ -48,6 +46,167 @@ Perkembangan  dalam  bidang teknologi  diera  modern  saat  ini  sudah  semakin 
 	For dalam Java adalah jenis perulangan yang jumlahnya sudah ditentukan sebelumnya. Perulangan dengan teknik ini dikontrol oleh tiga bagian yang ada dalam tanda kurung dan masing-masing bagaian ini dipisahkan dengan tanda titik koma. Perulangan (looping) pada Bahasa pemrograman Java adalah proses eksekusi perintah yang ada di dalam blok perulangan tersebut secara berulang-ulang sesuai dengan nilai yang ditentukan atau sampai mencapai suatu batas tertentu dari sebuah perulangan tersebut. Pernyataan while loop adalah pernyataan atau blok pernyataan yang diulang-ulang sampai mencapai kondisi yang cocok. Perulangan while adalah suatu bentuk perulangan yang memodifikasi teknik percabangan secara kasar. Pada perulangan do-while minimal melakukan satu kali pekerjaan yang ada di dalam blok while.
 
 ## Soal Dan Pembahasan
+- **STUDI KASUS 9: SISTEM ABSENSI MAHASISWA**
+#### **Class Mahasiswa**
+Atribut:
+nama (String), npm (String), absent (boolean)])
+Method:
+Absensint pertemuan, boolean hadir)
+Mengisi kehadiran berdasarkan pertemuan
+hitungKehadiran()
+Menghitung jumlah pertemuan yang dihadiri get Persentase Kehadiran()
+Menghitung persentase kehadiran (%)
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
+##### Source code:
+    package uts;
+    public class Mahasiswa {
+    String nama;
+    String npm;
+    boolean[] absensi;
+    public Mahasiswa(String nama, String npm, int jumlahPertemuan) {
+        this.nama = nama;
+        this.npm = npm;
+        this.absensi = new boolean[jumlahPertemuan];
+    }
+    // isi absensi tiap pertemuan
+    public void isiAbsensi(int pertemuan, boolean hadir) {
+        absensi[pertemuan] = hadir;
+    }
+    //  total hadir
+    public int hitungKehadiran() {
+        int total = 0;
+        for (boolean hadir : absensi) {
+            if (hadir) total++;
+        }
+        return total;
+    }
+
+    // persentase kehadiran
+    public double getPersentaseKehadiran() {
+        return (double) hitungKehadiran() / absensi.length * 100;
+     }
+    }
+
+##### **Class Kelas**
+Atribut:
+namakelas (String), List<Mahasiswa daftar Mahasiswa
+Method:
+tambah Mahasiswa Mahasiswa m) Menambahkan mahasiswa ke dalam kelas.
+tampilkan Rekap() Menampilkan daftar mahasiswa beserta kehadirannya dalam persentase.
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Class%20Kelas.png?raw=true)
+#### Source Code: 
+    package uts;
+    import java.util.ArrayList;
+    import java.util.List;
+    public class Kelas {
+    String namaKelas;
+    List<Mahasiswa> daftarMahasiswa;
+    public Kelas(String namaKelas) {
+        this.namaKelas = namaKelas;
+        this.daftarMahasiswa = new ArrayList<>();
+    }
+    public void tambahMahasiswa(Mahasiswa m) {
+        daftarMahasiswa.add(m);
+    }
+
+    // rekap seluruh mahasiswa
+    public void tampilkanRekap() {
+        System.out.println("\n===== REKAP ABSENSI KELAS " + namaKelas + " =====");
+        System.out.printf("%-20s %-15s %-15s %-10s\n", "Nama", "NPM", "Persentase", "Status");
+        System.out.println("-----------------------------------------------------------");
+
+        for (Mahasiswa m : daftarMahasiswa) {
+            double persen = m.getPersentaseKehadiran();
+            String status = (persen >= 75) ? "Lulus" : "Tidak Lulus";
+
+            System.out.printf("%-20s %-15s %-13.2f%% %-10s\n",
+                    m.nama, m.npm, persen, status);
+        }
+     }
+    }
+
+### **Class Main**
+Input beberapa mahasiswa dan jumlah pertemuan
+Gunakan looping untuk input kehadiran
+Gunakan if-else untuk menentukan apakah mahasuwa lulus berdasarkan kehadiran 2 75%.
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
+#### Source code:
+    package uts;
+    import java.util.Scanner;
+
+    public class MAIN{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input data kelas
+        System.out.print("Masukkan nama kelas: ");
+        String namaKelas = sc.nextLine();
+        Kelas kelas = new Kelas(namaKelas);
+
+        // Input jumlah pertemuan
+        System.out.print("Masukkan jumlah pertemuan: ");
+        int jumlahPertemuan = sc.nextInt();
+
+        // Input jumlah mahasiswa
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = sc.nextInt();
+        sc.nextLine(); // bersihkan buffer
+
+        // Looping untuk input mahasiswa dan absensinya
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            System.out.println("\nData Mahasiswa ke-" + (i + 1));
+            System.out.print("Nama: ");
+            String nama = sc.nextLine();
+
+            System.out.print("NPM: ");
+            String npm = sc.nextLine();
+
+            Mahasiswa m = new Mahasiswa(nama, npm, jumlahPertemuan);
+
+            // Input absensi per pertemuan
+            for (int j = 0; j < jumlahPertemuan; j++) {
+                System.out.print("Pertemuan ke-" + (j + 1) + " (hadir? true/false): ");
+                boolean hadir = sc.nextBoolean();
+                m.isiAbsensi(j, hadir);
+            }
+            sc.nextLine(); // clear buffer setelah input boolean
+
+            // Tambah mahasiswa ke kelas
+            kelas.tambahMahasiswa(m);
+        }
+
+        // Tampilkan rekap hasil akhir
+        kelas.tampilkanRekap();
+        sc.close();
+     }
+    }
+
+#### **Output**
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Output.png?raw=true)
+
+##### Penjelasan Output:
+
+
+## Kesimpulan
+Kesimpulan dari proyek pembuatan **sistem absensi digital** ini adalah bahwa program yang dirancang mampu membantu Prodi Informatika dalam mengelola data kehadiran mahasiswa secara efisien dan terstruktur. Dengan memanfaatkan konsep **pemrograman berorientasi objek (OOP)**, sistem ini membagi fungsi ke dalam beberapa kelas, yaitu *Mahasiswa*, *Kelas*, dan *Main*, sehingga kode menjadi lebih mudah dipahami dan dikembangkan. Kelas *Mahasiswa* bertanggung jawab menyimpan identitas dan status kehadiran setiap mahasiswa, sedangkan kelas *Kelas* berfungsi untuk mengelola daftar mahasiswa dan menampilkan rekapitulasi kehadiran secara keseluruhan. Melalui kelas *Main*, pengguna dapat melakukan input data, mencatat kehadiran tiap pertemuan, serta menentukan kelulusan mahasiswa berdasarkan persentase kehadiran minimal 75%. Dengan demikian, sistem ini tidak hanya mempermudah proses pencatatan kehadiran tetapi juga meningkatkan akurasi dan efisiensi dalam evaluasi kehadiran mahasiswa secara digital.
+
+## Daftar Pustaka
+Hannan. (2013). *Pengertian pemrograman.*
+Muhammad, M., & Muhammad, R. (2021). *Makalah perulangan Java.*
+Sekreningsih, N. (2021). *Job sheet pemrograman berorientasi objek with "Java".*
+Suryana, T. (2019). *Percabangan dalam JavaScript.*
+
+
+## Lampiran
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Lampiran2.png?raw=true)
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Lampiran3.png?raw=true)
+![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/lampiran1.png?raw=true)
+
+
+
+
+
+
 
 
 
