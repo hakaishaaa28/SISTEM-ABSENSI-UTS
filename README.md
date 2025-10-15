@@ -56,6 +56,7 @@ Mengisi kehadiran berdasarkan pertemuan hitungKehadiran()
 Menghitung jumlah pertemuan yang dihadiri get Persentase Kehadiran()
 Menghitung persentase kehadiran (%)
 ![alt text](https://github.com/hakaishaaa28/UTS-PEMOGRAMAN-SISTEM-ABSENSI-UTS-19/blob/main/Class%20Mahasiswa.png?raw=true)
+![alt text](?raw=true)
 ##### Source code:
     package uts;
     public class Mahasiswa {
@@ -85,6 +86,12 @@ Menghitung persentase kehadiran (%)
         return (double) hitungKehadiran() / absensi.length * 100;
      }
     }
+##### **Penjelasan Source Code:**
+Dari source code di atas dapat diketahui bahwa tipe classnya adalah public berarti bisa di akses dari file lain juga yang mana variable dalam class terdapat nama yang di simpan dalam bentuk string untuk menyimpan nama mahasiswa, npm yang disimpan dalam bentuk string untuk menyimpan nomor pokok mahasiswa dan absensi yang di simpan dalam bentuk array boolean, yang jika hadir akan jadi true dan jika tidak hadir akan jadi false.
+Selanjutnya ada yang namanya konstruktor untuk menjalankan otomatis saat objeknya dibuat. this.nama = nama; untuk menyimpan nilai yang dimasukkan ke atribut nama, begitupun this.npm = npm; untuk menyimpan npm yang dimasukkan ke atribut npm. Untuk new boolean[jumlah pertemuan]; untuk membuat array absensi sesuai jumlah pertemuan. Pada method isi Absensi() digunakan untuk mengisi data hadir/tidak hadir berdasarkan pertemuan keberapa. Method hitung kehadiran digunakan untuk menghitung berapa kali mahasiswa hadir.
+Looping akan memeriksa setiap nilai di absensi[ ], menambah total jika true. Method getPersentaseKehadiran() untuk menghitung persentase kehadiran dalam % dimana jumlah hadir dibagi jumlah kehadiran dan di kali 100.
+
+
 
 ##### **Class Kelas**
 Atribut:
@@ -123,12 +130,20 @@ tampilkan Rekap() Menampilkan daftar mahasiswa beserta kehadirannya dalam persen
         }
      }
     }
+##### **Penjelasan Source Code:**
+Dari source code di atas dapat dilihat bahwa perlu import java untuk membuat list, dimana import. java. until. Arraylist; untuk menyimban banyak data mahasiswa dan import. java. until. list; untuk struktur data daftar. Di dalam public class Kelas namaKelas digunakan untuk menyimpan nama kelas dan daftarMahasiswa digunakan untuk menyimpan kumpulan objek Mahasiswa dalam bentuk list.
+Pada kontruktor this.namaKelas = kelas; digunakan untuk menyimpan nama kelas ke atribut namaKelas. this.daftarMahasiswa = new ArrayList<> ( ): digunakan untukmembuat list kosong daftarMahasiswa agar siap menampung data mahasiswa baru. Pada Method tambahMahasiswa() berfungsi untuk menambahkan mahasiswa ke dalam daftar kelas. 
+Method tampilkanRekap() untuk menampilkan rekap absen dalam bentuk tabel. Dimana System.out.println("\n===== REKAP ABSENSI KELAS " + namaKelas + " ====="); digunakan untuk menampilkan data dalam bentuk tabel rapi yang rapi. System.out.printf("%-20s %-15s %-15s %-10s\n", "Nama", "NPM", "Persentase", "Status"); printf digunakan untuk mencetak teks dengan format tertentu, seperti mengatur jarak, lebar kolom, atau jumlah angka di belakang koma agar tampilan output lebih rapi dan teratur. Format "%-20s %-15s %-15s %-10s" artinya tiap kolom punya lebar tetap dan teks rata kiri dan /n untuk menambah baris baru. for (Mahasiswa m : daftarMahasiswa) looping untuk menampilkan semua mahasiswa yang ada di kelas.
+getPersentaseKehadiran() digunakan untuk memanggil method dari class Mahasiswa untuk menghitung persentase kehadiran. (persen >= 75) ? "Lulus" : "Tidak Lulus"; menunjukkan bentuk operator ternary yang artinya jika persentase ≥ 75 berarti lulus dan jika jika < 75 berarti tidak lulus
+
+	
 
 ### **Class Main**
 Input beberapa mahasiswa dan jumlah pertemuan
 Gunakan looping untuk input kehadiran
 Gunakan if-else untuk menentukan apakah mahasuwa lulus berdasarkan kehadiran 2 75%.
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
+![alt text](?raw=true)
 #### Source code:
     package uts;
     import java.util.Scanner;
@@ -180,12 +195,17 @@ Gunakan if-else untuk menentukan apakah mahasuwa lulus berdasarkan kehadiran 2 7
      }
     }
 
+##### **Penjelasan Source Code:**
+Melalui source code diatas dapat diketahui bahwa tipe classnya public yang dimana dapat di akses dari file yang lain. Source code ini juga menggunakan Scanner sebagai kelas yang digunakan untuk mengurai tipe primitif. Pada code ini juga menggunakan String untuk menyimpan nama kelas. Tipe data String sendiri merupakan kumpulan karakter yang digunakan untuk membentuk urutan tertentu. Di dalam source code tersebut juga menginput jumlah pertemuan dengan menggunaka tipe data Int. Int sendiri adalah tipe data primitif yang sering digunakan saat melakukan perhitungan numerik dalam program,dan dengan menggunakan tipe data int memungkinkan pemrosesan yang efisien dalam hal memori dan kecepatan. Untuk menjalankan sebuah code ini, juga menggunakan Looping sebagai salah satu konsep fundamental dalam pemrograman yang digunakan untuk menjalankan serangkaian perintah atau kode secara berulang hingga kondisi tertentu terpenuh. Dengan adanya Looping, kita dapat menentukan Nama, NPM, dan juga jumlah pertemuan mahasiswa.
+	Tipe data boolean dalam source code ini, digunakan untuk menentukan sebuah true or false dari inputan absen mahasiswa. Jika true, dia akan memberikan sebuah output hadir didalam nama mahasiswa tersebut. Dalam Scanner, jika kita menggunakan tipe data String maka kita akan menggunakan nextLine(); dan jika tipe datanya Int ataupun angka maka kita akan menggunakan nextInt();. Jika ingin menutup Scanner yang membaca dari System.in, kita harus menggunakan sc.close();.
+
+	
+
 #### **Output**
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Output.png?raw=true)
 
 ##### Penjelasan Output:
 Dari semua souce code dari ketiga file yang sudah dibuat mulai dari file class mahasiswa, class kelas, dan class MAIN maka akan didapatkan output seperti poda gambar 1.5 di atas, dimana awalnya akan di cetak nama kelas, jumlah pertemuan, dan jumlah mahasiswa yang semuanya diketik atau dimasukkan oleh pengguna saat menjalankan program, barulah memasukkan semua data mahasiswa yang jumlahnya akan ada 3 orang karena dari data awal yang dimasukkan jumalah mahasiswanya ada 3 orang. Setelah itu masukkan nama, NPM, dan kehadiran setiap mahasiswa dalam 5 kali pertemuan seperti yang sudah dicantumkan sebelumnya. Barulah di akhir akan muncul tabel yang berisi rekap absensi dari semua mahasiswa dari source code yang sebelumnnya dimasukkan.
-
 
 ## Kesimpulan
 Kesimpulan dari proyek pembuatan **sistem absensi digital** ini adalah bahwa program yang dirancang mampu membantu Prodi Informatika dalam mengelola data kehadiran mahasiswa secara efisien dan terstruktur. Dengan memanfaatkan konsep **pemrograman berorientasi objek (OOP)**, sistem ini membagi fungsi ke dalam beberapa kelas, yaitu *Mahasiswa*, *Kelas*, dan *Main*, sehingga kode menjadi lebih mudah dipahami dan dikembangkan. Kelas *Mahasiswa* bertanggung jawab menyimpan identitas dan status kehadiran setiap mahasiswa, sedangkan kelas *Kelas* berfungsi untuk mengelola daftar mahasiswa dan menampilkan rekapitulasi kehadiran secara keseluruhan. Melalui kelas *Main*, pengguna dapat melakukan input data, mencatat kehadiran tiap pertemuan, serta menentukan kelulusan mahasiswa berdasarkan persentase kehadiran minimal 75%. Dengan demikian, sistem ini tidak hanya mempermudah proses pencatatan kehadiran tetapi juga meningkatkan akurasi dan efisiensi dalam evaluasi kehadiran mahasiswa secara digital.
