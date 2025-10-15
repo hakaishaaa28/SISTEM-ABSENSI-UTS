@@ -55,7 +55,7 @@ Method:
 Mengisi kehadiran berdasarkan pertemuan hitungKehadiran()
 Menghitung jumlah pertemuan yang dihadiri get Persentase Kehadiran()
 Menghitung persentase kehadiran (%)
-![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
+![alt text](https://github.com/hakaishaaa28/UTS-PEMOGRAMAN-SISTEM-ABSENSI-UTS-19/blob/main/Class%20Mahasiswa.png?raw=true)
 ##### Source code:
     package uts;
     public class Mahasiswa {
@@ -89,7 +89,7 @@ Menghitung persentase kehadiran (%)
 ##### **Class Kelas**
 Atribut:
 - namakelas (String), List<Mahasiswa daftar Mahasiswa
-Method:
+- Method:
 - tambah Mahasiswa Mahasiswa m) Menambahkan mahasiswa ke dalam kelas.
 tampilkan Rekap() Menampilkan daftar mahasiswa beserta kehadirannya dalam persentase.
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Class%20Kelas.png?raw=true)
