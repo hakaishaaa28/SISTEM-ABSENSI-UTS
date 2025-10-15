@@ -49,8 +49,11 @@ Perkembangan  dalam  bidang teknologi  diera  modern  saat  ini  sudah  semakin 
 - **STUDI KASUS 9: SISTEM ABSENSI MAHASISWA**
 #### **Class Mahasiswa**
 Atribut:
+
 nama (String), npm (String), absent (boolean)])
+
 Method:
+
 Absensint pertemuan, boolean hadir)
 Mengisi kehadiran berdasarkan pertemuan
 hitungKehadiran()
