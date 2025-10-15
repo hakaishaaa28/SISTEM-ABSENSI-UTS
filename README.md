@@ -47,6 +47,7 @@ Perkembangan  dalam  bidang teknologi  diera  modern  saat  ini  sudah  semakin 
 
 ## Soal Dan Pembahasan
 - **STUDI KASUS 9: SISTEM ABSENSI MAHASISWA**
+
 #### **Class Mahasiswa**
 Atribut:
 - nama (String), npm (String), absent (boolean)])
@@ -55,8 +56,10 @@ Method:
 Mengisi kehadiran berdasarkan pertemuan hitungKehadiran()
 Menghitung jumlah pertemuan yang dihadiri get Persentase Kehadiran()
 Menghitung persentase kehadiran (%)
+
 ![alt text](https://github.com/hakaishaaa28/UTS-PEMOGRAMAN-SISTEM-ABSENSI-UTS-19/blob/main/Class%20Mahasiswa.png?raw=true)
-![alt text](?raw=true)
+![alt text](https://github.com/hakaishaaa28/UTS-PEMOGRAMAN-SISTEM-ABSENSI-UTS-19/blob/main/Class%20Mahasiswa2.png?raw=true)
+
 ##### Source code:
     package uts;
     public class Mahasiswa {
@@ -143,7 +146,7 @@ Input beberapa mahasiswa dan jumlah pertemuan
 Gunakan looping untuk input kehadiran
 Gunakan if-else untuk menentukan apakah mahasuwa lulus berdasarkan kehadiran 2 75%.
 ![alt text](https://github.com/hakaishaaa28/SISTEM-ABSENSI-UTS/blob/main/Assets/Class%20Main.png?raw=true)
-![alt text](?raw=true)
+![alt text](https://github.com/hakaishaaa28/UTS-PEMOGRAMAN-SISTEM-ABSENSI-UTS-19/blob/main/Class%20Main2.png?raw=true)
 #### Source code:
     package uts;
     import java.util.Scanner;
@@ -212,9 +215,13 @@ Kesimpulan dari proyek pembuatan **sistem absensi digital** ini adalah bahwa pro
 
 ## Daftar Pustaka
 Hannan. (2013). *Pengertian pemrograman.*
+
 Muhammad, M., & Muhammad, R. (2021). *Makalah perulangan Java.*
-Sekreningsih, N. (2021). *Job sheet pemrograman berorientasi objek with "Java".*
+
+Sekreningsih, N. (2021). *Job sheet pemrograman berorientasi objek with "Java"*.
+
 Suryana, T. (2019). *Percabangan dalam JavaScript.*
+
 
 
 ## Lampiran
